@@ -8,13 +8,10 @@ def pop_up_message(message):
     msg = tk.Label(window,text= message)
     msg.pack()
 def wav_to_mp3(wav_file):
-    # Load the wav file
     audio = AudioSegment.from_wav(wav_file)
 
-    # Output filename for mp3 file
     mp3_file = os.path.splitext(wav_file)[0] + ".mp3"
 
-    # Export as mp3
     audio.export(mp3_file, format="mp3")
     pop_up_message(f"Conversion completed: {mp3_file}")
 
